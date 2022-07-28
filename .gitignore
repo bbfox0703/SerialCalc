@@ -1,5 +1,6 @@
 *.exe
 *.~*
+*.7z
 *.dcu
 *.local
 *.res
