@@ -3,7 +3,7 @@ unit main0;
 interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, md5;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Hash;
 
 const
   PasswordLength = 8;  // max 10
@@ -41,10 +41,13 @@ var
   i: integer;
   s1: String;
   src, dst, shash: String;
+  md5x: THashMD5;
+
 begin
   src := Edit3.Text;
   dst := '';
-  Edit1.Text := UpperCase(MD5Print(MD5String(UpperCase(src))));
+  Edit1.Text:= md5x.GetHMAC(src,'hasd6laMSd@odd*');
+
   shash := Copy(Edit1.Text, Length(Edit1.Text) - PasswordLength*3, PasswordLength*3);
   for i := 0 to PasswordLength - 1 do
   begin

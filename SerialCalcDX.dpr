@@ -2,8 +2,7 @@ program SerialCalcDX;
 
 uses
   Vcl.Forms,
-  main0 in 'main0.pas' {Form1},
-  md5 in 'md5.pas';
+  main0 in 'main0.pas' {Form1};
 
 {$R *.res}
 
