@@ -52,8 +52,8 @@ begin
   for i := 0 to PasswordLength - 1 do
   begin
     s1 := Copy(shash, i*3+1, 3);
-    iStr := StrToInt('$' + s1) * 373;
-    iLead := iStr mod 37;
+    iStr := StrToInt('$' + s1) * 373; // modify this number to change algorithm, don't be too large
+    iLead := iStr mod 37; // modify this number to change algorithm
     case iLead of
       0..7 : iLead := iLead + 50;
     else
